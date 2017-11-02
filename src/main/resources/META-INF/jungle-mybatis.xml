@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- properties元素必须放在配置文件的最开头 -->
+	<!-- <properties resource="jungle.properties" /> -->
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="aggressiveLazyLoading" value="false" />
+		<setting name="localCacheScope" value="STATEMENT" />
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<setting name="useColumnLabel" value="true" />
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		<setting name="defaultStatementTimeout" value="25000" />
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.tencent.jungle.db.datasource.HicariDataSourceFactory" alias="HIKARI" />
+	</typeAliases>
+	<plugins>
+		<plugin interceptor="com.tencent.jungle.db.interceptor.SqlLoggerInterceptor">
+			<property name="logSql" value="false" />
+			<property name="logSqlTimeCost" value="true" />
+		</plugin>
+	</plugins>
+	<environments default="default">
+		<!-- 仅占位用,如果不在mybatis配置中配置一个environment,则事务的提交是交给容器来进行管理的。注意参数initializationFailFast -->
+		<environment id="default">
+			<transactionManager type="JDBC">
+				<property name="autoCommit" value="false" />
+			</transactionManager>
+			<dataSource type="HIKARI">
+				<!-- 参见:com.zaxxer.hikari.AbstractHikariConfig(https://github.com/brettwooldridge/HikariCP) -->
+				<property name="dataSourceClassName" value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" />
+				<property name="dataSource.user" value="localhost" />
+				<property name="dataSource.password" value="localhost" />
+				<property name="dataSource.databaseName" value="localhost" />
+				<property name="dataSource.serverName" value="localhost" />
+				<property name="dataSource.port" value="9999" />
+				<property name="dataSource.cachePrepStmts" value="true" />
+				<property name="dataSource.prepStmtCacheSize" value="250" />
+				<property name="dataSource.prepStmtCacheSqlLimit" value="2048" />
+				<property name="dataSource.useServerPrepStmts" value="true" />
+
+				<property name="dataSource.useUnicode" value="true" />
+				<property name="dataSource.characterEncoding" value="utf8" />
+				<property name="autoCommit" value="false" />
+				<!-- This property controls whether the pool will "fail fast" if the pool cannot be seeded with initial connections successfully. If you want your application to start even when the database is down/unavailable, 
+					set this property to false. Default: true -->
+				<property name="initializationFailFast" value="false" />
+				<!-- 一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒，参考MySQL wait_timeout参数（show variables like '%timeout%';）2800 秒				<property name="maxLifetime" value="1800000" />
+				连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count) -->
+				<property name="maximumPoolSize" value="1" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+<!-- 		<mapper resource="META-INF/sqlMap/ActMsgFlowAppUinMapper.xml" />
+		<mapper resource="META-INF/sqlMap/ActRecoveryRecordMapper.xml" />
+		<mapper resource="META-INF/sqlMap/HyliveGiftFlowMapper.xml" />
+		<mapper resource="META-INF/sqlMap/HyloveGiftFlowMapper.xml" />
+		<mapper resource="META-INF/sqlMap/HyUserInfoMapper.xml" />
+		<mapper resource="META-INF/sqlMap/HyBlackuserInfoMapper.xml" /> -->
+		<package name="com.tencent.jungle.db.mapper" />
+	</mappers>
+</configuration>

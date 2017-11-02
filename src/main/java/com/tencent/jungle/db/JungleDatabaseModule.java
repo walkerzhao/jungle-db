@@ -25,8 +25,8 @@ import com.tencent.jungle.util.JungleConfiguration;
 public class JungleDatabaseModule extends XMLMyBatisModule {
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
-	@Inject
-	private JungleConfiguration jungleConfig ;
+	
+	private JungleConfiguration jungleConfig = JungleConfiguration.getInstance();
 	public JungleDatabaseModule(){
 	}
 	@Override

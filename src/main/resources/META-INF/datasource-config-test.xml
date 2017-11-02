@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+
+		<environment id="hicari_config111">
+			<transactionManager type="JDBC">
+				<property name="autoCommit" value="false" />
+			</transactionManager>
+			<dataSource type="HICARI">
+				<property name="dataSourceClassName" value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" />
+				<property name="dataSource.user" value="root" />
+				<property name="dataSource.password" value="123456" />
+				<property name="dataSource.databaseName" value="test" />
+				<property name="dataSource.serverName" value="localhost" />
+				<property name="dataSource.portNumber" value="3306" />
+				<property name="dataSource.cachePrepStmts" value="true" />
+				<property name="dataSource.prepStmtCacheSize" value="250" />
+				<property name="dataSource.prepStmtCacheSqlLimit" value="2048" />
+				<property name="dataSource.useServerPrepStmts" value="true" />
+			</dataSource>
+		</environment>
+</configs>

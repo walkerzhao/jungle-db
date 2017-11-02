@@ -36,7 +36,7 @@ public class DataSourceConfigBuilder {
 	private Configuration config;
 	private HashSet<String> ids;
 	
-	@Inject
+
 	private JungleConfiguration jungleConfig;
 
 	@Inject
@@ -49,7 +49,7 @@ public class DataSourceConfigBuilder {
 
 	public DataSourceConfigBuilder() {
 		super();
-//		jungleConfig = JungleConfiguration.getInstance();
+		jungleConfig = JungleConfiguration.getInstance();
 		try {
 			this.parser = createParser();
 			allSources(parser.evalNode("configs"));
