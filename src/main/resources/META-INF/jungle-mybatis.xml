@@ -34,11 +34,11 @@
 			<dataSource type="HIKARI">
 				<!-- 参见:com.zaxxer.hikari.AbstractHikariConfig(https://github.com/brettwooldridge/HikariCP) -->
 				<property name="dataSourceClassName" value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" />
-				<property name="dataSource.user" value="localhost" />
-				<property name="dataSource.password" value="localhost" />
-				<property name="dataSource.databaseName" value="localhost" />
+				<property name="dataSource.user" value="root" />
+				<property name="dataSource.password" value="123" />
+				<property name="dataSource.databaseName" value="test" />
 				<property name="dataSource.serverName" value="localhost" />
-				<property name="dataSource.port" value="9999" />
+				<property name="dataSource.port" value="3306" />
 				<property name="dataSource.cachePrepStmts" value="true" />
 				<property name="dataSource.prepStmtCacheSize" value="250" />
 				<property name="dataSource.prepStmtCacheSqlLimit" value="2048" />

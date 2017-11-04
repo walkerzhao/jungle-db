@@ -1,35 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.tencent.jungle</groupId>
-	<version>3.4.6.alpha-SNAPSHOT</version>
-<!-- 	<parent> -->
-<!-- 		<groupId>com.tencent.jungle</groupId> -->
-<!-- 		<artifactId>jungle-parent</artifactId> -->
-<!-- 		<version>3.4.6.alpha-SNAPSHOT</version> -->
-<!-- 	</parent> -->
-
-	<artifactId>jungle-db</artifactId>
-	<name>0.0.1</name>
-	<packaging>jar</packaging>
 	
+	<groupId>com.tencent.jungle</groupId>
+	<artifactId>jungle-db</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>jungle-db</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencies>
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.tencent.jungle</groupId> -->
-<!-- 			<artifactId>jungle-server-core</artifactId> -->
-<!-- 			<version>3.4.6.alpha-SNAPSHOT</version> -->
-<!-- 			<exclusions> -->
-<!-- 				<exclusion> -->
-<!-- 					<artifactId>javax.servlet-api</artifactId> -->
-<!-- 					<groupId>javax.servlet</groupId> -->
-<!-- 				</exclusion> -->
-<!-- 			</exclusions> -->
-<!-- 			<scope></scope> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>commons-configuration</groupId>
 			<artifactId>commons-configuration</artifactId>
@@ -104,16 +87,16 @@
 			<artifactId>jsqlparser</artifactId>
 			<version>0.9.3</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		
-		
+
+
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
